@@ -2,11 +2,11 @@ import LanguageSelector from '../LanguageSelector';
 
 import './view.css';
 
-export default function TranslationList({ list, lang, direction }) {
+export default function TranslationListView({ list, lang, direction }) {
 	const values = [];
 	for(const id in list) {
 		values.push(
-			<textarea value={list[id]} />
+			<textarea value={list[id]} onChange={() => {}} />
 		);
 	}
 
