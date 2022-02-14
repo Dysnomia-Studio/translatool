@@ -22,5 +22,7 @@ test('Renders an non-empty list', () => {
 	);
 
 	const textElements = screen.getAllByText('Test');
-	textElements.map((elt) => expect(elt).toBeInTheDocument());
+	for(const elt of textElements) {
+		expect(elt).toBeInTheDocument();
+	}
 });

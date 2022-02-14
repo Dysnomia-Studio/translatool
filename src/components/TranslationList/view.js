@@ -5,9 +5,11 @@ import './view.css';
 export default function TranslationListView({ list, lang, direction }) {
 	const values = [];
 	for(const id in list) {
-		values.push(
-			<textarea value={list[id]} onChange={() => {}} />
-		);
+		if(list.hasOwnProperty(id)) {
+			values.push(
+				<textarea value={list[id]} onChange={() => {}} />
+			);
+		}
 	}
 
 	return (
