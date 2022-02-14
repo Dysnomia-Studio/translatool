@@ -1,0 +1,15 @@
+.languageSelector-body {
+	display: inline-block;
+
+	width: 48vw;
+	margin: 1vw;
+}
+
+.languageSelector-body-right, .languageSelector-body-right select {
+	text-align: right;
+}
+
+.languageSelector-body textarea {
+	width: 100% !important;
+	height: 3rem !important;
+}

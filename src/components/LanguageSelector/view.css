@@ -1,0 +1,8 @@
+.language-selector {
+	margin-bottom: 0.5rem;
+}
+
+.language-selector select {
+	min-width: 30%;
+	padding: 0.5rem 1rem;
+}

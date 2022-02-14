@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 export default function useFileList() {
-	const [fileList, setFileList] = useState([]);
+	const [fileList, setFileList] = useState(['path/to/file', 'path/to/secondFile']);
 
-	// Get file list from back-end
+	// TODO: Get file list from back-end
 
-	return ['path/to/file'];
+	return fileList;
 }
