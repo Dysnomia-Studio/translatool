@@ -1,0 +1,15 @@
+{
+  "name": "translatool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.cjs",
+  "scripts": {
+    "start": "electron ."
+  },
+  "type": "module",
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^17.0.0"
+  }
+}
