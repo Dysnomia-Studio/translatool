@@ -1,13 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function useTranslation() {
-	const [translationList, setTranslationList] = useState({
-		test: 'Test',
-		test2: 'Test 2',
-		test3: 'Test 3',
-	});
+import { ipcRenderer } from '../helpers/electron';
 
-	// TODO: Get translation list from back-end
+export default function useTranslation(file, language) {
+	const [translationList, setTranslationList] = useState();
+
+	useEffect(() => {
+		(async() => {
+			setTranslationList(
+				await ipcRenderer.invoke('i18n:getTranslations', file, language)
+			)
+		})();
+	}, []);
 
 	return translationList;
 }

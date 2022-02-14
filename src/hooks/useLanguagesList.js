@@ -1,12 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import { ipcRenderer } from '../helpers/electron';
 
 export default function useLanguagesList() {
-	const [languageList, setLanguageList] = useState({
-		fr: 'Francais',
-		en: 'English',
-	});
+	const [languageList, setLanguageList] = useState({});
 
-	// TODO: Get language list from back-end
+	useEffect(() => {
+		(async() => {
+			setLanguageList(
+				await ipcRenderer.invoke('i18n:getLanguages')
+			)
+		})();
+	}, []);
 
 	return languageList;
 }
