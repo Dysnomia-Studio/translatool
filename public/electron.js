@@ -68,15 +68,39 @@ ipcMain.handle('i18n:getFiles', () => {
 	return i18nConfig.files;
 });
 
-ipcMain.handle('i18n:getTranslations', (_, file, language) => {
+function getFilePath(file, language) {
 	let filePath = path.join(i18nPath, file, `${language}.json`);
 	if(!fs.existsSync(filePath)) {
 		filePath = path.join(i18nPath, language, `${file}.json`);
 	}
 
 	if(!fs.existsSync(filePath)) {
-		return {};
+		return;
 	}
 
-	return parseJsonFile(filePath);
+	return filePath;
+}
+
+function getKeys(file) {
+	const keys = new Set();
+
+	for(const language in i18nConfig.languages) {
+		const data = parseJsonFile(getFilePath(file, language));
+
+		for(const key in data) {
+			keys.add(key);
+		}
+	}
+
+	return Array.from(keys);
+}
+
+ipcMain.handle('i18n:getTranslations', (_, file, language) => {
+	const data = parseJsonFile(getFilePath(file, language));
+	const finalData = {};
+	for(const key of getKeys(file)) {
+		finalData[key] = data[key] || '';
+	}
+
+	return finalData;
 });

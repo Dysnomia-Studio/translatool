@@ -7,7 +7,7 @@ export default function TranslationListView({ list, lang, direction, setLanguage
 	for(const id in list) {
 		if(list.hasOwnProperty(id)) {
 			values.push(
-				<textarea key={id} value={list[id]} onChange={() => {}} />
+				<textarea key={id} value={list[id]} placeholder={id} onChange={() => {}} />
 			);
 		}
 	}
