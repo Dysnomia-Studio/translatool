@@ -11,7 +11,7 @@ export default function useTranslation(file, language) {
 				await ipcRenderer.invoke('i18n:getTranslations', file, language)
 			)
 		})();
-	}, []);
+	}, [file, language]);
 
 	return translationList;
 }

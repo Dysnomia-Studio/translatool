@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import App from './view';
 
 test('renders root component without error', () => {
 	render(<App />);

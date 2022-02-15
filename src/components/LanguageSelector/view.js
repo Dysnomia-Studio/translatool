@@ -1,6 +1,6 @@
 import './view.css';
 
-export default function LanguageSelectorView({ useLanguagesList, current }) {
+export default function LanguageSelectorView({ useLanguagesList, setLanguage, current }) {
 	const languageList = useLanguagesList();
 	const languageListOptions = [];
 	for(const languageKey in languageList) {
@@ -11,7 +11,7 @@ export default function LanguageSelectorView({ useLanguagesList, current }) {
 
 	return (
 		<div className="language-selector">
-			<select value={current}>
+			<select value={current} onChange={(event) => setLanguage(event.target.value)}>
 				{languageListOptions}
 			</select>
 		</div>
