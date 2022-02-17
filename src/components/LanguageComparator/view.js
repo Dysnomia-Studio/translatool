@@ -14,8 +14,8 @@ export default function LanguageComparator({
 
 	return (
 		<>
-			<TranslationList list={leftTranslations} lang={leftLanguage} setLanguage={setLeftLanguage} direction={'left'} />
-			<TranslationList list={rightTranslations} lang={rightLanguage} setLanguage={setRightLanguage} direction={'right'} />
+			<TranslationList file={currentFile} list={leftTranslations} lang={leftLanguage} setLanguage={setLeftLanguage} direction={'left'} />
+			<TranslationList file={currentFile} list={rightTranslations} lang={rightLanguage} setLanguage={setRightLanguage} direction={'right'} />
 		</>
 	);
 }

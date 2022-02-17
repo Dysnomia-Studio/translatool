@@ -108,3 +108,7 @@ ipcMain.handle('i18n:getTranslations', (_, file, language) => {
 
 	return finalData;
 });
+
+ipcMain.handle('i18n:saveTranslation', (_, file, language, list) => {
+	fs.writeFileSync(getFilePath(file, language), JSON.stringify(list, null, 2))
+});
