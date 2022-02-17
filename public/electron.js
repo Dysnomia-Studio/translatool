@@ -89,10 +89,14 @@ function getKeys(file) {
 	const keys = new Set();
 
 	for(const language in i18nConfig.languages) {
-		const data = parseJsonFile(getFilePath(file, language));
+		if(i18nConfig.languages.hasOwnProperty(language)) {
+			const data = parseJsonFile(getFilePath(file, language));
 
-		for(const key in data) {
-			keys.add(key);
+			for(const key in data) {
+				if(data.hasOwnProperty(key)) {
+					keys.add(key);
+				}
+			}
 		}
 	}
 
