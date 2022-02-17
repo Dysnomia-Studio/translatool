@@ -7,20 +7,29 @@ function useFileListMock(value) {
 }
 
 test('Renders an empty list', () => {
+	let currentFile;
+
 	render(
 		<FileSelectorView
+			currentFile={currentFile}
+			setCurrentFile={(value) => currentFile = value}
 			useFileList={() => useFileListMock([])}
 		/>
 	);
+
+	expect(currentFile).toBeUndefined();
 });
 
 test('Renders an non-empty list', () => {
+	let currentFile;
+
 	render(
 		<FileSelectorView
+			currentFile={currentFile}
+			setCurrentFile={(value) => currentFile = value}
 			useFileList={() => useFileListMock(['path/to/file'])}
 		/>
 	);
 
-	const textElement = screen.getByText('file');
-	expect(textElement).toBeInTheDocument();
+	expect(currentFile).toBeDefined();
 });

@@ -20,9 +20,4 @@ test('Renders an non-empty list', () => {
 			useTranslation={() => useTranslationMock({ test: 'Test' })}
 		/>
 	);
-
-	const textElements = screen.getAllByText('Test');
-	for(const elt of textElements) {
-		expect(elt).toBeInTheDocument();
-	}
 });
