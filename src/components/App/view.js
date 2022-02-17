@@ -6,6 +6,7 @@ import LanguageComparator from '../LanguageComparator';
 export default function AppView({ useLanguagesList }) {
 	const languages = useLanguagesList();
 
+	const [currentFile, setCurrentFile] = useState();
 	const [leftLanguage, setLeftLanguage] = useState();
 	const [rightLanguage, setRightLanguage] = useState();
 
@@ -26,8 +27,12 @@ export default function AppView({ useLanguagesList }) {
 
 	return (
 		<div>
-			<FileSelector />
+			<FileSelector
+				currentFile={currentFile}
+				setCurrentFile={setCurrentFile}
+			/>
 			<LanguageComparator
+				currentFile={currentFile}
 				leftLanguage={leftLanguage}
 				rightLanguage={rightLanguage}
 				setLeftLanguage={setLeftLanguage}

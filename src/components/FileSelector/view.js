@@ -1,29 +1,29 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import './view.css';
 
-export default function FileSelector({ useFileList }) {
+export default function FileSelector({ useFileList, currentFile, setCurrentFile }) {
 	const fileList = useFileList();
-	const [selectedFile, setSelectedFile] = useState(fileList[0]);
 
 	useEffect(() => {
-		setSelectedFile(fileList[0]);
-	}, [fileList]);
+		if(!currentFile) {
+			setCurrentFile(fileList[0]);
+		}
+	}, [fileList, currentFile, setCurrentFile]);
 
-	if(typeof selectedFile !== 'string') {
+	console.log('Selected:', currentFile);
+
+	if(typeof currentFile !== 'string') {
 		return null;
 	}
 
-	const separator = (id) => (<i key={id} className="arrow right"></i>);
-	let i = 0;
 	return (
-		<div>
-			{selectedFile.split('/')
-				.map((elt) => <span key={elt} className="fileName-element">{elt}</span>)
-				.reduce((accu, elem) => {
-					return accu === null ? [separator(++i), elem] : [...accu, separator(++i), elem];
-				}, null)
-			}
+		<div className="file-selector">
+			<select onChange={(event) => setCurrentFile(event.target.value)}>
+				{
+					fileList.map((elt) => <option value={elt}>{elt}</option>)
+				}
+			</select>
 		</div>
 	);
 }

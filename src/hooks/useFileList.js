@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { ipcRenderer } from '../helpers/electron';
 
 export default function useFileList() {
-	const [fileList, setFileList] = useState(['path/to/file', 'path/to/secondFile']);
+	const [fileList, setFileList] = useState([]);
 
 	useEffect(() => {
 		(async() => {
