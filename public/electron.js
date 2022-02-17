@@ -46,6 +46,10 @@ app.on('activate', () => {
  * IPC
  */
 function parseJsonFile(filePath) {
+	if(!filePath) {
+		return {};
+	}
+
 	return JSON.parse(
 		fs.readFileSync(
 			filePath,
