@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const isDev = require('electron-is-dev');
 
 function createWindow() {
@@ -58,11 +58,18 @@ function parseJsonFile(filePath) {
 	);
 }
 
+let i18nPath = '';
+let i18nConfig = {};
+function reloadConfig() {
+	i18nConfig = parseJsonFile(path.join(i18nPath, 'config.json'));
+}
 
-const i18nPath = '18NLOCATION';
+ipcMain.handle('i18n:setConfigPath', async() => {
+	const selected = await dialog.showOpenDialog({ properties: ['openDirectory'] })
 
-
-const i18nConfig = parseJsonFile(path.join(i18nPath, 'config.json'));
+	i18nPath = selected.filePaths[0];
+	reloadConfig(); 
+});
 
 ipcMain.handle('i18n:getLanguages', () => {
 	return i18nConfig.languages;

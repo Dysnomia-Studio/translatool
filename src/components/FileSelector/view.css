@@ -20,7 +20,7 @@
   padding: 1rem;
 }
 
-.file-selector select {
+.file-selector select, .file-selector input {
   min-width: calc(50% - 2rem);
   padding: 0.5rem 1rem;
 }

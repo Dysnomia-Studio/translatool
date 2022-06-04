@@ -11,7 +11,7 @@ export default function AppView({ useLanguagesList }) {
 	const [rightLanguage, setRightLanguage] = useState();
 
 	useEffect(() => {
-		if(!leftLanguage || !rightLanguage) {
+		if(languages && (!leftLanguage || !rightLanguage)) {
 			setLeftLanguage(Object.keys(languages)[0]);
 			setRightLanguage(Object.keys(languages)[1]);
 		}
