@@ -3,6 +3,8 @@
 	"version": "0.1.0",
 	"private": true,
 	"main": "public/electron.js",
+	"author": "Elanis",
+	"description": "A cross-platform GUI to easily translate your local projects.",
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.16.4",
 		"@testing-library/react": "^13.3.0",
