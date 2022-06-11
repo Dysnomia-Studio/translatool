@@ -4,3 +4,7 @@
 [![Duplicated Lines (%)](https://sonar.dysnomia.studio/api/project_badges/measure?project=translatool&metric=duplicated_lines_density)](https://sonar.dysnomia.studio/dashboard?id=translatool) [![Coverage](https://sonar.dysnomia.studio/api/project_badges/measure?project=translatool&metric=coverage)](https://sonar.dysnomia.studio/dashboard?id=translatool)
 
 A cross-platform GUI to easily translate your local projects
+
+Projects using this tool:
+- [alchemistry-i18n](https://github.com/Dysnomia-Studio/alchemistry-i18n)
+- [extortion-i18n](https://github.com/Dysnomia-Studio/extortion-i18n)
