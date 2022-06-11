@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import TranslationList from '../TranslationList';
 
 export default function LanguageComparator({

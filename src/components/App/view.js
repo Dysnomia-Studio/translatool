@@ -16,7 +16,7 @@ export default function AppView({ useLanguagesList }) {
 			setRightLanguage(Object.keys(languages)[1]);
 		}
 
-	}, [languages]);
+	}, [languages, leftLanguage, rightLanguage]);
 
 	if(!leftLanguage || !rightLanguage) {
 		return null;
