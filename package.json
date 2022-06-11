@@ -4,11 +4,11 @@
 	"private": true,
 	"main": "public/electron.js",
 	"dependencies": {
-		"@testing-library/jest-dom": "^5.16.3",
-		"@testing-library/react": "^12.1.4",
-		"@testing-library/user-event": "^13.5.0",
-		"react": "^17.0.2",
-		"react-dom": "^17.0.2",
+		"@testing-library/jest-dom": "^5.16.4",
+		"@testing-library/react": "^13.3.0",
+		"@testing-library/user-event": "^14.2.0",
+		"react": "^18.1.0",
+		"react-dom": "^18.1.0",
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
@@ -38,11 +38,11 @@
 		]
 	},
 	"devDependencies": {
-		"concurrently": "^7.0.0",
+		"concurrently": "^7.2.1",
 		"cross-env": "^7.0.3",
-		"electron": "^17.2.0",
+		"electron": "^19.0.4",
 		"electron-is-dev": "^2.0.0",
-		"react-scripts": "5.0.0",
+		"react-scripts": "^5.0.1",
 		"wait-on": "^6.0.1"
 	}
 }
