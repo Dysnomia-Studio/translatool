@@ -1,9 +1,9 @@
 {
 	"name": "translatool",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"private": true,
 	"main": "public/electron.js",
-	"author": "Elanis",
+	"author": "Elanis <translatool@elanis.eu>",
 	"description": "A cross-platform GUI to easily translate your local projects.",
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.16.4",
@@ -48,5 +48,10 @@
 		"react-scripts": "^5.0.1",
 		"wait-on": "^6.0.1"
 	},
-	"homepage": "./"
+	"homepage": "./",
+	"build": {
+		"linux": {
+			"target": ["deb", "zip"]
+		}
+	}
 }
