@@ -21,7 +21,7 @@ export default function FileSelector({ useFileList, currentFile, setCurrentFile 
 		<div className="file-selector">
 			<select onChange={(event) => setCurrentFile(event.target.value)}>
 				{
-					fileList.map((elt) => <option value={elt}>{elt}</option>)
+					fileList.map((elt) => <option key={elt} value={elt}>{elt}</option>)
 				}
 			</select>
 		</div>
