@@ -44,7 +44,7 @@
 		"concurrently": "^7.2.1",
 		"cross-env": "^7.0.3",
 		"electron": "^19.0.4",
-		"electron-builder": "^23.0.3",
+		"electron-builder": "^23.3.3",
 		"react-scripts": "^5.0.1",
 		"wait-on": "^6.0.1"
 	},
