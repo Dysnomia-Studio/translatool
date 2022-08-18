@@ -8,7 +8,7 @@
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.3.0",
-		"@testing-library/user-event": "^14.4.2",
+		"@testing-library/user-event": "^14.4.3",
 		"electron-is-dev": "^2.0.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
@@ -43,7 +43,7 @@
 	"devDependencies": {
 		"concurrently": "^7.3.0",
 		"cross-env": "^7.0.3",
-		"electron": "^20.0.1",
+		"electron": "^20.0.3",
 		"electron-builder": "^23.3.3",
 		"react-scripts": "^5.0.1",
 		"wait-on": "^6.0.1"
