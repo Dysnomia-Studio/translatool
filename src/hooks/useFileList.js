@@ -1,17 +1,7 @@
-import { useEffect, useState } from 'react';
+import useConfiguration from './useConfiguration';
 
-import { ipcRenderer } from '../helpers/electron';
+export default function useFileList(selectedFolder) {
+	const config = useConfiguration(selectedFolder);
 
-export default function useFileList() {
-	const [fileList, setFileList] = useState([]);
-
-	useEffect(() => {
-		(async() => {
-			setFileList(
-				await ipcRenderer.invoke('i18n:getFiles')
-			)
-		})();
-	}, []);
-
-	return fileList;
+	return config?.files;
 }

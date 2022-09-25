@@ -1,17 +1,31 @@
 import { useEffect, useState } from 'react';
 
-import { ipcRenderer } from '../helpers/electron';
+import useLanguagesList from './useLanguagesList';
 
-export default function useTranslation(file, language) {
+import getFilePath from '../business/getFilePath';
+import getKeys from '../business/getKeys';
+import parseJsonFile from '../business/parseJsonFile';
+
+export default function useTranslation(selectedFolder, file, language) {
 	const [translationList, setTranslationList] = useState();
 
+	const languages = useLanguagesList(selectedFolder);
+
 	useEffect(() => {
+		if(!selectedFolder || !file || !language) {
+			return;
+		}
+
 		(async() => {
-			setTranslationList(
-				await ipcRenderer.invoke('i18n:getTranslations', file, language)
-			)
+			const data = await parseJsonFile(await getFilePath(selectedFolder, file, language));
+			const finalData = {};
+			for(const key of await getKeys(selectedFolder, languages, file)) {
+				finalData[key] = data[key] || '';
+			}
+
+			setTranslationList(finalData);
 		})();
-	}, [file, language]);
+	}, [selectedFolder, file, language]);
 
 	return translationList;
 }
