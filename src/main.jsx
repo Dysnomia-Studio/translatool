@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import Index from './Index';
+import Index from './index';
 
 import './index.css';
 
