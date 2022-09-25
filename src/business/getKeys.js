@@ -1,6 +1,9 @@
 import getFilePath from './getFilePath';
 import parseJsonFile from './parseJsonFile';
 
+/**
+ * Get all keys for translation from files
+ */
 export default async function getKeys(selectedFolder, languages, file) {
 	const keys = new Set();
 

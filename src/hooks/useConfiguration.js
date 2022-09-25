@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 
 import parseJsonFile from '../business/parseJsonFile';
 
+/**
+ * Get configuration on filesystem
+ */
 export default function useTranslation(selectedFolder) {
 	const [config, setConfiguration] = useState();
 

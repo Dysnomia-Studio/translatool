@@ -6,6 +6,9 @@ import getFilePath from '../business/getFilePath';
 import getKeys from '../business/getKeys';
 import parseJsonFile from '../business/parseJsonFile';
 
+/**
+ * Get translations on filesystem for a specific language
+ */
 export default function useTranslation(selectedFolder, file, language) {
 	const [translationList, setTranslationList] = useState();
 

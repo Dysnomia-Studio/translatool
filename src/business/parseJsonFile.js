@@ -1,5 +1,8 @@
 import { invoke } from '@tauri-apps/api/tauri';
 
+/**
+ * Open a file and parse it as a json string
+ */
 export default async function parseJsonFile(filePath) {
 	if(!filePath) {
 		return {};
