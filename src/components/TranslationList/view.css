@@ -1,8 +1,8 @@
 .languageSelector-body {
 	display: inline-block;
 
-	width: 47vw;
-	margin: 1vw;
+	width: calc(50vw - 1.5rem);
+	margin-left: 1rem;
 }
 
 .languageSelector-body-right, .languageSelector-body-right select {
@@ -11,10 +11,14 @@
 
 .languageSelector-body textarea {
 	width: 100% !important;
-	height: 1rem !important;
+	height: 2.1rem !important;
 
 	background: hsl(220deg 15% 24%);
 	color: #EEEEEE;
 	font-family: sans-serif;
 	padding: 0.5rem;
+}
+
+input, select {
+	padding: 0.5rem 1rem;
 }

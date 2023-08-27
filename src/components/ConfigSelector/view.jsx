@@ -1,5 +1,7 @@
 import { open } from '@tauri-apps/api/dialog';
 
+import './index.css';
+
 async function openDialog(setSelectedFolder) {
 	const res = await open({
 		directory: true,
@@ -16,7 +18,7 @@ async function openDialog(setSelectedFolder) {
 
 export default function ConfigSelector({ setSelectedFolder }) {
 	return (
-		<div className="file-selector">
+		<div className="config-selector">
 			<input type="button" onClick={() => openDialog(setSelectedFolder)} value="Select project" />
 		</div>
 	);
