@@ -1,0 +1,12 @@
+.translation-key-add {
+  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+.translation-key-add input[type="text"] {
+  min-width: 40%;
+}
+.translation-key-add input[type="button"] {
+  min-width: calc(10% - 1.5rem);
+  margin-left: 0.5rem;
+}
