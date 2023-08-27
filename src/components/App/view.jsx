@@ -7,18 +7,16 @@ export default function AppView({ useLanguagesList, selectedFolder }) {
 	const languages = useLanguagesList(selectedFolder);
 
 	const [currentFile, setCurrentFile] = useState(selectedFolder);
-	const [leftLanguage, setLeftLanguage] = useState();
+	const [leftLanguage, setLeftLanguage] = useState('en');
 	const [rightLanguage, setRightLanguage] = useState();
 
 	useEffect(() => {
-		if(languages && (!leftLanguage || !rightLanguage)) {
-			setLeftLanguage(Object.keys(languages)[0]);
-			setRightLanguage(Object.keys(languages)[1]);
+		if(languages && !rightLanguage) {
+			setRightLanguage(Object.keys(languages)[0]);
 		}
+	}, [languages]);
 
-	}, [languages, leftLanguage, rightLanguage]);
-
-	if(!leftLanguage || !rightLanguage) {
+	if(!languages || !rightLanguage) {
 		return null;
 	}
 
