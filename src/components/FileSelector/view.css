@@ -5,3 +5,12 @@
 .file-selector select {
   min-width: calc(50% - 0.5rem);
 }
+
+.file-selector input[type="text"] {
+  min-width: calc(40% - 3rem);
+  margin-left: 3.5rem;
+}
+.file-selector input[type="button"] {
+  min-width: calc(10% - 0.5rem);
+  margin-left: 0.5rem;
+}

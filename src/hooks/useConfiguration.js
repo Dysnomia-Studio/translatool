@@ -5,7 +5,7 @@ import parseJsonFile from '../business/parseJsonFile';
 /**
  * Get configuration on filesystem
  */
-export default function useTranslation(selectedFolder) {
+export default function useTranslation(selectedFolder, lastUpdate) {
 	const [config, setConfiguration] = useState();
 
 	useEffect(() => {
@@ -16,10 +16,7 @@ export default function useTranslation(selectedFolder) {
 		(async() => {
 			setConfiguration(await parseJsonFile(selectedFolder + '/config.json'));
 		})();
-	}, [selectedFolder]);
-
-	console.log(selectedFolder + '/config.js');
-	console.log(config);
+	}, [selectedFolder, lastUpdate]);
 
 	return config;
 }

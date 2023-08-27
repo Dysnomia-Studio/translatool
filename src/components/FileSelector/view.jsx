@@ -1,9 +1,13 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
+import createFile from '../../events/createFile';
 
 import './view.css';
 
 export default function FileSelector({ useFileList, currentFile, setCurrentFile, selectedFolder }) {
-	const fileList = useFileList(selectedFolder);
+	const [lastUpdate, setLastUpdate] = useState(Date.now());
+	const fileList = useFileList(selectedFolder, lastUpdate);
+	const [inputText, setInputText] = useState('');
 
 	useEffect(() => {
 		if(fileList && !currentFile) {
@@ -22,6 +26,16 @@ export default function FileSelector({ useFileList, currentFile, setCurrentFile,
 					fileList && fileList.map((elt) => <option key={elt} value={elt}>{elt}</option>)
 				}
 			</select>
+			<input type="text" placeholder="New file name" value={inputText} onChange={(e) => setInputText(e.target.value)} />
+			<input type="button" value="Add file" onClick={async() => {
+				try {
+					await createFile(selectedFolder, inputText);
+					setInputText('');
+					setLastUpdate(Date.now());
+				} catch(e) {
+					console.error(e);
+				}
+			}} />
 		</div>
 	);
 }

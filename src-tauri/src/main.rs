@@ -23,16 +23,24 @@ fn get_file_content(file_path: &str) -> String {
 }
 
 /**
+ * Expose a command to create a folder on filesystem
+ */
+#[tauri::command]
+fn mkdir(folder_path: &str) {
+    let _ = fs::create_dir(folder_path);
+}
+
+/**
  * Expose a command to write on filesystem
  */
 #[tauri::command]
 fn set_file_content(file_path: &str, data: &str) {
-    fs::write(file_path, data);
+    let _ = fs::write(file_path, data);
 }
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![does_file_exists, get_file_content, set_file_content])
+        .invoke_handler(tauri::generate_handler![does_file_exists, get_file_content, mkdir, set_file_content])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
