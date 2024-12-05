@@ -11,7 +11,7 @@ use std::path::Path;
  */
 #[tauri::command]
 fn does_file_exists(file_path: &str) -> bool {
-   Path::new(file_path).exists()
+    Path::new(file_path).exists()
 }
 
 /**
@@ -40,7 +40,13 @@ fn set_file_content(file_path: &str, data: &str) {
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![does_file_exists, get_file_content, mkdir, set_file_content])
+        .plugin(tauri_plugin_dialog::init())
+        .invoke_handler(tauri::generate_handler![
+            does_file_exists,
+            get_file_content,
+            mkdir,
+            set_file_content
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
