@@ -6,5 +6,6 @@
 A cross-platform GUI to easily translate your local projects
 
 Projects using this tool:
-- [alchemistry-i18n](https://github.com/Dysnomia-Studio/alchemistry-i18n)
-- [extortion-i18n](https://github.com/Dysnomia-Studio/extortion-i18n)
+- [alchemistry-i18n](https://github.com/Dysnomia-Studio/alchemistry-i18n), [Alchemistry](https://store.steampowered.com/app/1730540/Alchemistry/)'s game translations
+- [extortion-i18n](https://github.com/Dysnomia-Studio/extortion-i18n), [Extortion](https://store.steampowered.com/app/1299430/Extortion/)'s game translations
+- [factory-game-i18n](https://github.com/Dysnomia-Studio/factory-game-i18n), [Manufactur’ inc.](https://store.steampowered.com/app/2146380/Manufactur_inc/)'s game translations
