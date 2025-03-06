@@ -8,3 +8,5 @@ A cross-platform GUI to easily translate your local projects
 Projects using this tool:
 - [alchemistry-i18n](https://github.com/Dysnomia-Studio/alchemistry-i18n)
 - [extortion-i18n](https://github.com/Dysnomia-Studio/extortion-i18n)
+
+![UI](README-main-ui.png)
